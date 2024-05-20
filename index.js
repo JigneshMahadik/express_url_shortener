@@ -32,9 +32,9 @@ app.post("/",(req,res)=>{
         // const urlMap = {
         //     [shortUrl] : req.body.url
         // };
-        const fileData = JSON.parse(fs.readFileSync("urlMap.json",{encoding: "utf-8"}));
+        const fileData = JSON.parse(fs.readFileSync("./urlMap.json",{encoding: "utf-8"}));
         fileData[shortUrl] = req.body.url;
-        fs.writeFileSync("urlMap.json",JSON.stringify(fileData));
+        fs.writeFileSync("./urlMap.json",JSON.stringify(fileData));
         console.log("Url has been shorten and added successfully.");
 
         res.json({
@@ -52,7 +52,7 @@ app.post("/",(req,res)=>{
 // API to get long URL using shortUrl
 app.get("/:url",(req,res)=>{
     const shortenUrl = req.params.url;
-    const fileData = JSON.parse(fs.readFileSync("urlMap.json",{encoding: "utf-8"}));
+    const fileData = JSON.parse(fs.readFileSync("./urlMap.json",{encoding: "utf-8"}));
     const longUrl = fileData[shortenUrl];
     // res.json({
     //     status : true,
