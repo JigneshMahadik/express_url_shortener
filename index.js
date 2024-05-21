@@ -39,7 +39,7 @@ app.post("/",(req,res)=>{
 
         res.json({
             status : true,
-            Short_URL : "http://localhost:8082/"+shortUrl
+            Short_URL : "https://express-url-shortener-uhow.onrender.com/"+shortUrl
             // [shortUrl] : req.body.url
         });
     } 
