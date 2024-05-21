@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(express.json());
 
+
 // API to make given URL short.
 app.post("/",(req,res)=>{
     try {
@@ -61,6 +62,6 @@ app.get("/:url",(req,res)=>{
     res.redirect(longUrl);
 });
 
-app.listen(8082,()=>{
-    console.log("Server is up and running on port : 8080");
+app.listen(8083,()=>{
+    console.log("Server is up and running on port : 8083");
 })
